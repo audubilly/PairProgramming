@@ -7,9 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
     Customer customer;
+
     @BeforeEach
     void setUp() {
-        customer= new Customer();
+        customer = new Customer();
     }
 
     @AfterEach
