@@ -3,7 +3,7 @@ package BankingApplication;
 public class Customer {
     private String firstName;
     private String lastName;
-    private String otherNames;
+    private String otherName;
     private String address;
     private String email;
     private String phoneNumber;
@@ -11,37 +11,29 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String firstName, String lastName, String otherNames, String address, String email, String phoneNumber) {
+    public Customer(String firstName, String lastName, String otherName, String address, String email, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.otherNames = otherNames;
+        this.otherName = otherName;
         this.address = address;
         this.email = email;
         this.phoneNumber = phoneNumber;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public String getOtherNames() {
-        return otherNames;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setOtherNames(String otherNames) {
-        this.otherNames = otherNames;
+    public String getOtherName() {
+        return otherName;
+    }
+
+    public void setOtherName(String otherName) {
+        this.otherName = otherName;
     }
 
     public String getAddress() {
@@ -68,12 +60,20 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName=firstName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
     @Override
     public String toString() {
-        return String.format("Customer{%n" +
+        return String.format("Customer Profile{%n" +
                 "firstName='" + firstName + '\'' +
                 "%nlastName='" + lastName + '\'' +
-                "%notherNames='" + otherNames + '\'' +
+                "%notherName='" + otherName + '\'' +
                 "%naddress='" + address + '\'' +
                 "%nemail='" + email + '\'' +
                 "%nphoneNumber='" + phoneNumber + '\''

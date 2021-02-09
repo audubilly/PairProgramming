@@ -8,34 +8,33 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
     Customer customer;
-
     @BeforeEach
     void setUp() {
-        customer = new Customer();
+        customer= new Customer();
     }
 
     @AfterEach
     void tearDown() {
     }
-
     @Test
-    void testThatAllCustomersDetailsAreCorrect(){
-        customer.setFirstName("billy");
-        assertEquals("billy", customer.getFirstName());
+    void testThatAllCustomerDetailsAreCorrect(){
+        customer.setFirstName("Titi");
+        assertEquals("Titi",customer.getFirstName());
 
-        customer.setLastName("audu");
-        assertEquals("audu", customer.getLastName());
+        customer.setLastName("Titus");
+        assertEquals("Titus",customer.getLastName());
 
-        customer.setOtherNames("adams");
-        assertEquals("adams", customer.getOtherNames());
+        customer.setOtherName("Damilola");
+        assertEquals("Damilola",customer.getOtherName());
 
-        customer.setAddress("semicolon, yaba, Lagos");
-        assertEquals("semicolon, yaba, Lagos", customer.getAddress());
+        customer.setAddress("Semi-colon");
+        assertEquals("Semi-colon",customer.getAddress());
 
-        customer.setPhoneNumber("09056790444");
-        assertEquals("09056790444", customer.getPhoneNumber());
+        customer.setPhoneNumber("08066972580");
+        assertEquals("08066972580",customer.getPhoneNumber());
 
-        customer.setEmail("billyaudu@gmail.com");
-        assertEquals("billyaudu@gmail.com", customer.getEmail());
+        customer.setEmail("Titi@Semicolon");
+        assertEquals("Titi@Semicolon",customer.getEmail());
     }
+
 }

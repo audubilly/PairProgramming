@@ -7,55 +7,42 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BankAccountTest {
-
     BankAccount bankAccount;
     @BeforeEach
     void setUp() {
-
-        bankAccount = new BankAccount();
+       bankAccount=new BankAccount();
     }
 
     @AfterEach
     void tearDown() {
     }
-
     @Test
     void testThatAllGettersAndSettersAreWorking(){
-        bankAccount.setDepositMoney(100);
-        assertEquals(100, bankAccount.getDepositMoney());
-
-        bankAccount.setWithdrawMoney(100);
-        assertEquals(100, bankAccount.getWithdrawMoney());
-
+        bankAccount.setDepositAmount(100);
+        assertEquals(100,bankAccount.getDepositAmount());
+        bankAccount.setWithdrawAmount(100);
+        assertEquals(100,bankAccount.getWithdrawAmount());
         assertEquals(0,bankAccount.getBalance());
-
         bankAccount.setAccountTypes(1);
-        assertEquals("Savings", bankAccount.getAccountTypes());
-
+        assertEquals("Savings",bankAccount.getAccountTypes());
     }
     @Test
-    void testThatToStringMethodWorks(){
+    void testBankAccountToStringMethod(){
         bankAccount.setAccountTypes(2);
-        bankAccount.setDepositMoney(200);
+        bankAccount.setDepositAmount(100);
         System.out.println(bankAccount.toString());
     }
-
     @Test
-    void testThatBnkAccountTypesCanBeGotten(){
-       BankAccount bankAccount1 = new BankAccount(1);
-       assertEquals("Savings", bankAccount1.getAccountTypes());
+    void testForBankAccountTypes(){
+        BankAccount bankAccount1= new BankAccount(2);
+        assertEquals("Current",bankAccount1.getAccountTypes());
         System.out.println(bankAccount1.getAccountNumber());
-
-
-        BankAccount bankAccount2 = new BankAccount(2);
-        assertEquals("Current", bankAccount2.getAccountTypes());
+        BankAccount bankAccount2= new BankAccount(1);
+        assertEquals("Savings",bankAccount2.getAccountTypes());
         System.out.println(bankAccount2.getAccountNumber());
 
-
-        BankAccount bankAccount3 = new BankAccount(2, 1000);
-        assertEquals("Current", bankAccount3.getAccountTypes());
+        BankAccount bankAccount3= new BankAccount(1,1000);
+        assertEquals("Savings",bankAccount3.getAccountTypes());
         System.out.println(bankAccount3.toString());
-
-
     }
 }
