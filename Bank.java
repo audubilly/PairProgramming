@@ -3,7 +3,7 @@ package BankingApplication;
 public class Bank {
 
     private Customer[] customers = new Customer[10];
-    private BankAccount [] accounts = new BankAccount[2];
+    private BankAccount [] bankAccounts = new BankAccount[10];
 
     public Bank() {
     }
@@ -16,12 +16,14 @@ public class Bank {
         return customers;
     }
 
-    public void setCustomers(Customer customer) {
+    public void setCustomers(Customer customer,BankAccount bankAccount ) {
         for (int counter = 0; counter < customers.length; counter++) {
-            if (customers[counter] == null) {
+            if (customers[counter] == null && bankAccounts[counter] == null) {
                 customers[counter] = customer;
+                bankAccounts[counter] = bankAccount;
                 break;
             }
         }
     }
+
 }

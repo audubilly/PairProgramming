@@ -3,10 +3,12 @@ package BankingApplication;
 import java.security.SecureRandom;
 
 public class BankAccount {
-    private int withdrawMoney;
-    private int depositMoney;
+    private int withdrawAmount;
+    private int depositAmount;
     private String accountTypes;
     private String accountNumber;
+    private int accountBalance;
+
 
     SecureRandom random = new SecureRandom();
 
@@ -20,6 +22,12 @@ public class BankAccount {
     public BankAccount(int accountTypes) {
         setAccountTypes(accountTypes);
         this.accountNumber = generateAccountNumber();
+    }
+
+    public BankAccount(int accountTypes,int depositAmount) {
+        setAccountTypes(accountTypes);
+        this.accountNumber = generateAccountNumber();
+        this.accountBalance = depositAmount;
     }
 
     private String generateAccountNumber() {
@@ -41,25 +49,26 @@ public class BankAccount {
 
 
     public int getWithdrawMoney() {
-        return withdrawMoney;
+        return withdrawAmount;
     }
 
-    public void setWithdrawMoney(int withdrawMoney) {
-        this.withdrawMoney = withdrawMoney;
+    public void setWithdrawMoney(int withdrawAmount) {
+        this.withdrawAmount = withdrawAmount;
+        accountBalance = accountBalance - withdrawAmount;
     }
 
     public int getDepositMoney() {
-        return depositMoney;
+        return depositAmount;
     }
 
-    public void setDepositMoney(int depositMoney) {
-        this.depositMoney = depositMoney;
+    public void setDepositMoney(int depositAmount) {
+        this.depositAmount = depositAmount;
+        accountBalance = accountBalance + depositAmount;
     }
 
 
     public int getBalance() {
-        int balance = getDepositMoney() - getWithdrawMoney();
-        return balance;
+        return accountBalance;
     }
 
     public void setAccountTypes(int accountTypes) {
@@ -67,6 +76,7 @@ public class BankAccount {
             case 1 -> this.accountTypes = "Savings";
             case 2 -> this.accountTypes = "Current";
         }
+        this.accountNumber = generateAccountNumber();
 
     }
 
@@ -76,7 +86,7 @@ public class BankAccount {
 
     @Override
     public String toString() {
-        return String.format("Your account balance is %d and your account type is a %s account", getBalance(),getAccountTypes());
+        return String.format("%nYour account balance is %d%nAnd your account type is a %s account%nthe account Number is %s%n }", getBalance(),getAccountTypes(), getAccountNumber());
     }
 }
 

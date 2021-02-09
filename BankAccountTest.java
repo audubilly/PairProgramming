@@ -47,6 +47,15 @@ class BankAccountTest {
         System.out.println(bankAccount1.getAccountNumber());
 
 
+        BankAccount bankAccount2 = new BankAccount(2);
+        assertEquals("Current", bankAccount2.getAccountTypes());
+        System.out.println(bankAccount2.getAccountNumber());
+
+
+        BankAccount bankAccount3 = new BankAccount(2, 1000);
+        assertEquals("Current", bankAccount3.getAccountTypes());
+        System.out.println(bankAccount3.toString());
+
 
     }
 }

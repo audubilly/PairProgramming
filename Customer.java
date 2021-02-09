@@ -67,4 +67,16 @@ public class Customer {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Customer{%n" +
+                "firstName='" + firstName + '\'' +
+                "%nlastName='" + lastName + '\'' +
+                "%notherNames='" + otherNames + '\'' +
+                "%naddress='" + address + '\'' +
+                "%nemail='" + email + '\'' +
+                "%nphoneNumber='" + phoneNumber + '\''
+                );
+    }
 }
